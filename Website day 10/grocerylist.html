@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The LIST</title>
+    <link rel="stylesheet" href="assets/css/c05.css" />
+    <link rel="stylesheet" href="assets/css/hamburger.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  </head>
+  <style type="text/css">
+    *{
+    	margin:0;
+    	padding:0;
+    }
+
+/*    li{
+    -webkit-transition: all 4s ease-out 0s;
+    -moz-transition: all 4s ease-out 0s;
+    -ms-transition: all 4s ease-out 0s;
+    -o-transition: all 4s ease-out 0s;
+    transition: all 4s ease-out 0s;
+    }*/
+
+    input{
+    
+        height:23px;
+        background-color: #fff;
+        color: #666;
+        padding: 10px;
+        display: inline-block;
+        margin: 20px auto 20px auto;
+        width: 80%;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .buttonWrapper{
+      display: flex;
+    }
+    .button{
+    height: 25px;
+    background: darkgray;
+    flex-grow:1;
+    margin-right: 0px;
+    margin-left: 1px;
+    text-align: center;
+    color: #fff;
+	text-shadow: 2px 2px 1px #914141;
+	border-top: 1px solid #e99295;
+	border-bottom: 1px solid #914141;
+    }
+
+       .buttonDel{ height: 25px;
+    background: darkgray;
+    flex-grow:1;
+    margin-right: 0px;
+    margin-left: 1px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px 1px #914141;
+    border-top: 1px solid #e99295;
+    border-bottom: 1px solid #914141;
+    }
+
+    .button:nth-child(1){
+    		margin-left: 0px;
+    }
+
+    .buttonDel{
+    	margin-right:0px;
+    }
+
+    #userInput{
+        display: none;
+    }
+
+    #sideMenu{
+        display: none;
+        width:410px;
+        padding: 35px;
+        margin-top: 47px;
+        background-color: #403c3b;
+        position: absolute;
+        top: -29px;
+        left: 0px;
+        z-index: 100;
+        color: #fff;
+        text-shadow: 2px 2px 1px rgba(0,0,0,0.3);
+        font-size: 24px;
+        font-family: sans-serif;
+        letter-spacing: .05em;
+    }
+
+  </style>
+  <body>
+
+    <div id="page">
+        <div id="sideMenu">
+    <h3>Your Favorites</h3>
+    <p id="notes"></p>
+
+    </div>
+
+    <div id="ad">
+      <div class="adWrapper">
+        <div id="close"><img id="whateverthefuck"src="assets/images/close.png" /></div>
+
+        <h3>AWESOME WEIGHT LOSS</h3>
+        <img src="assets/images/images.png"/>
+        <p>Learn More Now!</p>
+        <button><span>Click Here</span></button>
+
+      </div>
+
+    </div>
+      <h1 id="header">List</h1>
+      <div id="headermenu"><button class="c-hamburger c-hamburger--htx"><span> toggle Menu</span></button></div>
+      <h2>THE LIST<span id="counter"></span></h2>
+      <ul id="todo"><div id="userInput"><div id="innerInputdiv"><form name="foodList" onsubmit="javascript:addUserShit();return false;"><input placeholder="Food To Buy" id="autocomplete"></input></form></div><div class="button" onclick="addUserShit()">ADD</div>
+      </div>
+      <div id="addNew" class="button">New Item</div>
+          
+
+      </ul>
+      
+      <div class="buttonWrapper"><div class="button" onclick="del()">Delete Class</div><div class="button" onclick="clearList()">Clear All</div><div class="button" onclick="add()">Add Element</div><div class="buttonDel">Delete</div> </div>
+    </div>
+
+
+    <script src="assets/js/groceryList.js"></script>
+
+  </body>
+</html>
