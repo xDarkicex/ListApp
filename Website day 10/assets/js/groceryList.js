@@ -107,6 +107,7 @@ $(document).on({
 	    $( this ).removeClass( "favorite");
 	    $(this).addClass("complete");
 	    addTolist();
+	    // $(this).effect("drop", "swing", function(){
 	    $(this).animate({opacity:0.0, left: '+=240'},300, 'swing', function() {
 	    	$('ul').append($(this).detach());
 	    	$(this).animate({opacity: 1,left: '-=240'}, 300, 'swing');
@@ -162,6 +163,9 @@ function newLi(text) {
 	var list = document.getElementsByTagName('ul')[0];	
 	var newElm = document.createElement('li');
 	var newtxt = document.createTextNode(text);
+	var attr = document.createAttribute('class');
+	attr.value = "ui-state-default";
+	newElm.setAttributeNode(attr);
 	$(newElm).slideDown(250).append(newtxt);
 
 	//newElm.appendChild(newtxt);
@@ -246,3 +250,9 @@ $(function (){addTolist();});
   }
 
 })();
+
+
+  $(function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  });

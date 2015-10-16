@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="assets/css/hamburger.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   </head>
   <style type="text/css">
@@ -99,7 +100,7 @@
         <div id="sideMenu">
     <h3>Your Favorites</h3>
     <p id="notes"></p>
-
+    <div class="button" onclick="del()">Remove All Favorites</div>
     </div>
 
     <div id="ad">
@@ -117,14 +118,16 @@
       <h1 id="header">List</h1>
       <div id="headermenu"><button class="c-hamburger c-hamburger--htx"><span> toggle Menu</span></button></div>
       <h2>THE LIST<span id="counter"></span></h2>
-      <ul id="todo"><div id="userInput"><div id="innerInputdiv"><form name="foodList" onsubmit="javascript:addUserShit();return false;"><input placeholder="Food To Buy" id="autocomplete"></input></form></div><div class="button" onclick="addUserShit()">ADD</div>
+      <div id="userInput"><div id="innerInputdiv"><form name="foodList" onsubmit="javascript:addUserShit();return false;"><input placeholder="Food To Buy" id="autocomplete"></input></form></div><div class="button" onclick="addUserShit()">ADD</div>
       </div>
       <div id="addNew" class="button">New Item</div>
+
+      <ul id="sortable" id="todo">
           
 
       </ul>
       
-      <div class="buttonWrapper"><div class="button" onclick="del()">Delete Class</div><div class="button" onclick="clearList()">Clear All</div><div class="button" onclick="add()">Add Element</div><div class="buttonDel">Delete</div> </div>
+      <div class="buttonWrapper"><div class="button" onclick="del()">Reset List</div><div class="button" onclick="clearList()">New List</div><div class="button" onclick="add()">Add Random Item</div><div class="buttonDel">Delete</div> </div>
     </div>
 
 
