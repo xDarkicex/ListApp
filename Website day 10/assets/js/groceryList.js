@@ -40,6 +40,10 @@ $(function(){
 
 });
 
+// $('#listNotes').click(function(){
+// 	console.log('Hello World');
+
+// });
 
 
 
@@ -50,6 +54,23 @@ function del(){
 for (var i = 0; i < $list.length; i++) {
  // if (list[i].getAttribute("class") === "hot"){
 	if ($list[i].hasAttribute("class") == true){ 
+   $list[i].removeAttribute("class");
+   addTolist();
+  }
+}
+
+};
+
+
+function favReset(){
+	var $list = $('li');
+
+
+for (var i = 0; i < $list.length; i++) {
+ // if (list[i].getAttribute("class") === "hot"){
+	// if ($list[i].hasAttribute("class") === "favorite"){ 
+
+	if (/favorite/.test($list[i].getAttribute("class"))) {		
    $list[i].removeAttribute("class");
    addTolist();
   }
@@ -166,7 +187,9 @@ function newLi(text) {
 	var attr = document.createAttribute('class');
 	attr.value = "ui-state-default";
 	newElm.setAttributeNode(attr);
+
 	$(newElm).slideDown(250).append(newtxt);
+	$(newElm).append('<br /><span id="listNotes">Notes</span>');
 
 	//newElm.appendChild(newtxt);
 	
@@ -182,8 +205,8 @@ function newLi(text) {
 	else if(/[^\w\s]/i.test(text)){
 		return alert("Error Not Valid input!");
 	}
-	else if(match = /(chevy|ford|toyota|honda|iphone)/i.exec(text)){
-		return alert(" "+match[1].toUpperCase()+" IS NOT FOOD!");
+	else if(match = /(videogames|games|masterbate|sleep|cheat)/i.exec(text)){
+		return alert(" "+match[1].toUpperCase()+" IS NOT PRODUCTIVE!");
 	}
 
 	if (text.length < 1){
@@ -196,6 +219,28 @@ function newLi(text) {
 }
 
 
+$('.favDel').click(function(){
+
+
+
+
+
+	var arr = document.getElementsByTagName('li');
+	var arr2 = document.getElementsByTagName('ul')[0];
+	var removeThisShit=[];
+	for(var i = 0; i < arr.length; i++){
+			if (/favorite/.test(arr[i].getAttribute("class"))) {
+				//arr2.removeChild(arr[i]);	
+				removeThisShit[removeThisShit.length] = arr[i];
+			}
+	}
+	for(var i=0; i< removeThisShit.length; i++) {
+		 arr2.removeChild(removeThisShit[i]);
+
+	}
+	addTolist();
+
+	});
 
 
 
@@ -256,3 +301,13 @@ $(function (){addTolist();});
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
   });
+
+$(document).on({
+	click: function(){
+		console.log('I was here!');
+	}
+
+
+}, '#listNotes');
+
+
